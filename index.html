@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirecting...</title>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get("email");
+    
+    if (email) {
+      fetch("https://hooks.zapier.com/hooks/catch/21713183/20qkskm/?email=" + encodeURIComponent(email))
+        .finally(() => {
+          window.location.href = "https://calendly.com/blake-bauer-cctlaunchpad/30min";
+        });
+    } else {
+      window.location.href = "https://calendly.com/blake-bauer-cctlaunchpad/30min";
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting you to Calendly...</p>
+</body>
+</html>
