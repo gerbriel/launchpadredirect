@@ -6,12 +6,17 @@
   <script>
     const params = new URLSearchParams(window.location.search);
     const email = params.get("email");
-    
+    const fname = params.get("fname");
+    const phone = params.get("phone");
+  
     if (email) {
-      fetch("https://hooks.zapier.com/hooks/catch/21713183/20qkskm/?email=" + encodeURIComponent(email))
-        .finally(() => {
-          window.location.href = "https://calendly.com/blake-bauer-cctlaunchpad/30min";
-        });
+      fetch("https://hooks.zapier.com/hooks/catch/21713183/20qkskm/?email=" 
+            + encodeURIComponent(email)
+            + "&fname=" + encodeURIComponent(fname)
+            + "&phone=" + encodeURIComponent(phone))
+      .finally(() => {
+        window.location.href = "https://calendly.com/blake-bauer-cctlaunchpad/30min";
+      });
     } else {
       window.location.href = "https://calendly.com/blake-bauer-cctlaunchpad/30min";
     }
