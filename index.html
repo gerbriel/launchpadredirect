@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,12 +6,14 @@
     const params = new URLSearchParams(window.location.search);
     const email = params.get("email");
     const fname = params.get("fname");
+    const lname = params.get("lname");
     const phone = params.get("phone");
-  
+
     if (email) {
       fetch("https://hooks.zapier.com/hooks/catch/21713183/20qkskm/?email=" 
             + encodeURIComponent(email)
             + "&fname=" + encodeURIComponent(fname)
+            + "&lname=" + encodeURIComponent(lname)
             + "&phone=" + encodeURIComponent(phone))
       .finally(() => {
         window.location.href = "https://calendly.com/blake-bauer-cctlaunchpad/30min";
@@ -22,7 +23,7 @@
     }
   </script>
 </head>
-<body>
+<body >
   <p>Redirecting you to Calendly...</p>
 </body>
 </html>
